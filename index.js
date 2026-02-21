@@ -13,9 +13,8 @@ function updateRate(){
         .then((res) => res.json())
         .then((data) => {
             const rate = data.conversion_rates[`${currencySecond.value}`];
-            exchangeRate.innerHTML = `1 ${currencyFirst.value} = ${Number(rate).toFixed(5)} ${currencySecond.value}`;
-            
-            worthSecond.value = (worthFirst.value * rate).toFixed(2);
+            exchangeRate.innerHTML = `1 ${currencyFirst.value} = ${Number(rate).toLocaleString('en-US')} ${currencySecond.value}`;    
+            worthSecond.value = (Number(worthFirst.value) * rate).toLocaleString('en-US');
         });
 }
 
