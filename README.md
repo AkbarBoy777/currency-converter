@@ -57,6 +57,7 @@ The project uses:
 
 ```js
 fetch() 
+```
 to request real-time currency data from an external API.
 
 ---
